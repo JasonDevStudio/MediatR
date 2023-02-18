@@ -20,6 +20,9 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <Deterministic>true</Deterministic>
     <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageOutputPath>\\192.168.10.2\04_源码存放\06_Nuget</PackageOutputPath>
+    <Version>12.0.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

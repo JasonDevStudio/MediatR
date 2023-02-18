@@ -23,7 +23,8 @@ public class NotificationHandlerWrapperImpl<TNotification> : NotificationHandler
     {
         var handlers = serviceFactory
             .GetServices<INotificationHandler<TNotification>>()
-            .Select(static x => new NotificationHandlerExecutor(x, (theNotification, theToken) => x.Handle((TNotification)theNotification, theToken)));
+            .OrderBy(static x => x.Level).ThenBy(static x => x.Priority)
+            .Select(static x => new NotificationHandlerExecutor(x, (theNotification, theToken) => x.Handle((TNotification) theNotification, theToken)));
 
         return publish(handlers, notification, cancellationToken);
     }

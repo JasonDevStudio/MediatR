@@ -11,6 +11,22 @@ public interface INotificationHandler<in TNotification>
     where TNotification : INotification
 {
     /// <summary>
+    /// Gets or sets the priority.
+    /// </summary>
+    /// <value>
+    /// The priority.
+    /// </value>
+    decimal Priority { get; set; }
+
+    /// <summary>
+    /// Gets or sets the level.
+    /// </summary>
+    /// <value>
+    /// The level.
+    /// </value>
+    int Level { get; set; }
+
+    /// <summary>
     /// Handles a notification
     /// </summary>
     /// <param name="notification">The notification</param>
@@ -31,6 +47,22 @@ public abstract class NotificationHandler<TNotification> : INotificationHandler<
 
         return Task.CompletedTask;
     }
+
+    /// <summary>
+    /// Gets or sets the priority.
+    /// </summary>
+    /// <value>
+    /// The priority.
+    /// </value>
+    public decimal Priority { get; set; }
+
+    /// <summary>
+    /// Gets or sets the level.
+    /// </summary>
+    /// <value>
+    /// The level.
+    /// </value>
+    public int Level { get; set; }
 
     /// <summary>
     /// Override in a derived class for the handler logic

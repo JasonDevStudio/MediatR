@@ -10,7 +10,7 @@ namespace MediatR;
 /// <typeparam name="TResponse">The type of response from the handler</typeparam>
 public interface IRequestHandler<in TRequest, TResponse>
     where TRequest : IRequest<TResponse>
-{
+{ 
     /// <summary>
     /// Handles a request
     /// </summary>
@@ -26,7 +26,7 @@ public interface IRequestHandler<in TRequest, TResponse>
 /// <typeparam name="TRequest">The type of request being handled</typeparam>
 public interface IRequestHandler<in TRequest>
     where TRequest : IRequest
-{
+{ 
     /// <summary>
     /// Handles a request
     /// </summary>
